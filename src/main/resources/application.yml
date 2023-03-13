@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: jdbc:mysql:///im
+    username: root
+    password: "@Cwt20020701"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    serialization:
+      indent-output: true
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    jedis:
+      #Redis?????
+      pool:
+        max-active: 8 #?????
+        max-wait: 1ms #???????????
+        max-idle: 4 #???????????
+        min-idle: 0 #???????????
+mybatis-plus:
+  mapper-locations: mappers/*.xml
+  type-aliases-package: com.im.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.im.mapper: info
