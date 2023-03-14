@@ -9,7 +9,7 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 
+ *
  * @TableName privatemessage
  */
 @TableName(value ="privatemessage")
@@ -40,6 +40,12 @@ public class Privatemessage implements Serializable {
      * 发送时间
      */
     private Date sendTime;
+
+    public Privatemessage(Long senderId, Long receiverId, String context) {
+        this.senderId = senderId;
+        this.receiverId = receiverId;
+        this.context = context;
+    }
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
